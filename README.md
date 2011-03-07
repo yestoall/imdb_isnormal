@@ -19,3 +19,5 @@ movie.rating => 8.1
 movie.certification => "PG-13"
 movie.is_a => "feature"
 
+###*this is "my" first gem. 
+###*sorry about my english, my spanish is better (i hope).
