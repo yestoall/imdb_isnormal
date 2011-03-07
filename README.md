@@ -15,8 +15,11 @@ movie = imdb.find_by_title("lost", "tv_series")
 movie = imdb.find_movie_by_id("tt0468569")
 
 movie.title => "The Dark Knight"
+
 movie.rating => 8.1
+
 movie.certification => "PG-13"
+
 movie.is_a => "feature"
 
 ###*this is "my" first gem. 
