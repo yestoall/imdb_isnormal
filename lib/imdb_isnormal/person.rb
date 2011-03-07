@@ -1,4 +1,4 @@
-module ImdbParty
+module ImdbIsNormal
   class Person
     attr_accessor :name, :role, :imdb_id
     

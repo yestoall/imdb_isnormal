@@ -8,7 +8,7 @@ begin
     gem.summary = %Q{IMDB client using the IMDB API that their iPhone app uses}
     gem.description = %Q{IMDB client using the IMDB API that their iPhone app uses}
     gem.email = "nacho@yestoall.com"
-    gem.homepage = "http://github.com/yestoall/imdb_party"
+    gem.homepage = "http://github.com/yestoall/imdb_isnormal"
     gem.authors = ["Jon Maddox","Nacho Rapallo"]
     gem.add_development_dependency "shoulda"
     gem.add_dependency "httparty"

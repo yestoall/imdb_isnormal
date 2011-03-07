@@ -1,4 +1,4 @@
-module ImdbParty
+module ImdbIsNormal
   class Imdb
     include HTTParty
     include HTTParty::Icebox
