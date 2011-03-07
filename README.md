@@ -3,9 +3,12 @@
 ## How To Use
 
 	###In the same way of imdb_party.
+	
 	###but i've add one optional parameter to imdb.find_by_title
 	
-	movie = imdb.find_by_title("lost", "tv_series") 		# only for "tv_series" result
+	only for "tv_series" result
+	
+	movie = imdb.find_by_title("lost", "tv_series") 		
 	
 	###also we can get one more item in our searchs -> is_a
 	
