@@ -4,12 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "imdb_party"
+    gem.name = "imdb_isnormal"
     gem.summary = %Q{IMDB client using the IMDB API that their iPhone app uses}
     gem.description = %Q{IMDB client using the IMDB API that their iPhone app uses}
-    gem.email = "jon@mustacheinc.com"
-    gem.homepage = "http://github.com/maddox/imdb_party"
-    gem.authors = ["Jon Maddox"]
+    gem.email = "nacho@yestoall.com"
+    gem.homepage = "http://github.com/yestoall/imdb_party"
+    gem.authors = ["Jon Maddox","Nacho Rapallo"]
     gem.add_development_dependency "shoulda"
     gem.add_dependency "httparty"
   end
@@ -50,7 +50,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "imdb_party #{version}"
+  rdoc.title = "imdb_isnormal #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
