@@ -21,17 +21,18 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "lib/imdb_party.rb",
-    "lib/imdb_party/httparty_icebox.rb",
-    "lib/imdb_party/imdb.rb",
-    "lib/imdb_party/movie.rb",
-    "lib/imdb_party/person.rb",
+    "imdb_isnormal.gemspec",
+    "lib/imdb_isnormal.rb",
+    "lib/imdb_isnormal/httparty_icebox.rb",
+    "lib/imdb_isnormal/imdb.rb",
+    "lib/imdb_isnormal/movie.rb",
+    "lib/imdb_isnormal/person.rb",
     "test/movie_test.rb",
     "test/person_test.rb",
     "test/search_test.rb",
     "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/yestoall/imdb_party}
+  s.homepage = %q{http://github.com/yestoall/imdb_isnormal}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.0}
   s.summary = %q{IMDB client using the IMDB API that their iPhone app uses}
