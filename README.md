@@ -9,6 +9,8 @@
 	=> only for "tv_series" result
 	
     imdb = ImdbIsNormal::Imdb.new
+	imdb = ImdbParty::Imdb.new(:anonymize => true) # this will anonymize your requests to prevent getting your ip banned
+	
 	movie = imdb.find_by_title("lost", "tv_series") 		
 	
 ###also we can get one more item in our searchs -> is_a

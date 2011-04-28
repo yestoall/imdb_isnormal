@@ -5,30 +5,33 @@ module ImdbIsNormal
     cache :store => 'file', :timeout => 120, :location => Dir.tmpdir
     
     base_uri 'app.imdb.com'
-    default_params = {"api" => "v1", "appid" => "iphone1", "locale" => "en_US", "timestamp" => Time.now.to_i, "sig" => "heres my signature"}
+    default_params = {"api" => "v1", "appid" => "iphone1_1", "apiPolicy" => "app1_1", "apiKey" => "2wex6aeu6a8q9e49k7sfvufd6rhh0n", "locale" => "en_US", "timestamp" => Time.now.to_i, "sig" => "heres my signature"}
 
+    def initialize(options={})
+      self.class.base_uri 'http://anonymouse.org/cgi-bin/anon-www.cgi/http://app.imdb.com' if options[:anonymize]
+    end
     
     def find_by_title(title, kind = nil)
-      # added by nacho@yestoall.com -> kind
-      movie_results = []
-      results = self.class.get('/find', :query => {:q => title}).parsed_response
-      
-      if results["data"] && results["data"]["results"]
-        results["data"]["results"].each do |result_section|
-          result_section["list"].each do |r|
-            next unless r["tconst"] && r["title"]
-            # added by nacho@yestoall.com -> is_a
-            h = {:title => r["title"], :year => r["year"], :imdb_id => r["tconst"], :is_a => r["type"]}
-            h.merge!(:poster_url => r["image"]["url"]) if r["image"] && r["image"]["url"]
-            # added by nacho@yestoall.com -> update
-            update = true
-            update = false if kind && kind != r["type"]
-            movie_results << h if update
+        # added by nacho@yestoall.com -> kind
+        movie_results = []
+        results = self.class.get('/find', :query => {:q => title}).parsed_response
+
+        if results["data"] && results["data"]["results"]
+          results["data"]["results"].each do |result_section|
+            result_section["list"].each do |r|
+              next unless r["tconst"] && r["title"]
+              # added by nacho@yestoall.com -> is_a
+              h = {:title => r["title"], :year => r["year"], :imdb_id => r["tconst"], :is_a => r["type"]}
+              h.merge!(:poster_url => r["image"]["url"]) if r["image"] && r["image"]["url"]
+              # added by nacho@yestoall.com -> update
+              update = true
+              update = false if kind && kind != r["type"]
+              movie_results << h if update
+            end
           end
         end
-      end
-      
-      movie_results
+  
+        movie_results
     end
 
     def find_movie_by_id(imdb_id)
